@@ -3,6 +3,7 @@ import './../../App.css';
 import WeatherCard from './WeatherCard';
 const APPid = process.env.appId
 
+console.log(process.env.appId);
 export default class TodoList extends Component {
 
 	constructor(props){
@@ -19,7 +20,6 @@ export default class TodoList extends Component {
 
 		// Get our weather information
         fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Melbourne,au&appid=${APPid}`)
-		console.log(process.env.appId);
         .then(response => response.json())
         .then(data => {
             this.setState((prevState, props) => ({
