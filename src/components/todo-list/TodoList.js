@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './../../App.css';
 import TodoItem from './TodoItem';
+const wunderkey = process.env.WUNDERKEY
 
 export default class TodoList extends Component {
 
@@ -15,11 +16,11 @@ export default class TodoList extends Component {
 	}
 
 	updateList(){
-        const url = 'https://a.wunderlist.com/api/v1/tasks?list_id=<listIdHere?';
+        const url = `https://a.wunderlist.com/api/v1/tasks?list_id=${WUNDERKEY}`;
 
         const auth_headers = new Headers({
-            'X-Access-Token':'api key here',
-            'X-Client-ID':'api key here'}
+            'X-Access-Token':'`${WUNDERKEY}`',
+            'X-Client-ID':'`${WUNDERKEY}`'}
         );
 
         const headers = {
